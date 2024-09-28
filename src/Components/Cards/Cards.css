@@ -1,0 +1,72 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 20px;
+    flex: 1 1 250px; /* Flexible card width */
+    max-width: 600px; /* Max width */
+    height: 300px;
+    background-color: #efefef;
+    transition: all 0.4s ease; /* Smooth transition */
+    border-radius: 10px; /* Initial border radius */
+    color: #000; /* Text color */
+}
+
+.card .icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transition: background-color 0.4s ease; /* Smooth transition for icon background */
+}
+
+.card h3 {
+    margin: auto;
+}
+
+/* Hover effect */
+.card:hover {
+    background-color: #1e1e1e; /* Reversed background color */
+    color: #fff; /* Reversed text color */
+    border-radius: 120px; /* Increased border radius */
+}
+
+.card:hover .icon {
+    background-color: #333; /* Reversed icon background color */
+}
+
+.card:hover h3 {
+    color: #d75157;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .cards {
+        justify-content: center; /* Center cards on small screens */
+    }
+
+    .card {
+        width: 90%; /* Full width on smaller screens with padding */
+        max-width: 300px; /* Maintains the card's max width */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}

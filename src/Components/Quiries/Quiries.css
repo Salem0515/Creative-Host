@@ -1,0 +1,114 @@
+.Quiries {
+    background-image: url(../../Assets/Eight.png);
+    background-size: cover;
+    background-position: center;
+    height: auto; /* Changed to auto for responsiveness */
+    min-height: 800px; /* Maintain minimum height */
+    width: 100%;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 0 20px; /* Adjusted padding for smaller screens */
+    margin: 0;
+    overflow: hidden;
+}
+
+.innerdiv {
+    background-color: #d75157;
+    margin: auto;
+    width: 90%; /* Responsive width */
+    max-width: 1300px; /* Maximum width */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Reduced gap for smaller screens */
+}
+
+.left_side {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Limit maximum width for left side */
+}
+
+.left_side img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Limit maximum width */
+    animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px); /* Adjust the float height */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.right_side {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%; /* Full width on small screens */
+}
+
+.right_side .text_container {
+    border: 1px solid white;
+    margin-bottom: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    overflow: hidden; /* Ensures content is hidden when collapsed */
+    width: 100%; /* Full width for text containers */
+}
+
+.right_side .text_container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02); /* Slight scaling effect on hover */
+}
+
+.question {
+    margin: 0;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.question.active {
+    color: #ffcc00; /* Change color when active */
+}
+
+.answer {
+    margin-top: 10px;
+    font-size: 16px;
+    max-height: 0; /* Initially hidden */
+    opacity: 0; /* Initially hidden */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden; /* Ensures content is hidden when collapsed */
+}
+
+.answer.show {
+    max-height: 1000px; /* Set a large enough value to accommodate content */
+    opacity: 1; /* Show the content */
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .left_side, .right_side {
+        width: 50%; /* Two-column layout on medium screens and up */
+    }
+}
+
+@media (max-width: 768px) {
+    .innerdiv {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+}

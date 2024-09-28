@@ -1,0 +1,116 @@
+.about {
+    margin-top: 30px;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.about h1 span {
+    color: #d75157; /* Highlight color */
+}
+
+.panars {
+    display: flex;
+    overflow: hidden; /* Hides overflowing testimonials */
+    width: 100%; /* Ensure full width for the container */
+}
+
+.panar {
+    display: flex;
+    transition: transform 0.5s ease; /* Smooth transition for sliding effect */
+    width: calc(100% * ${testimonials.length / itemsPerPage} ); /* Adjusted width for total testimonials */
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%; /* Show four testimonials side by side */
+    text-align: center;
+    padding: 10px; /* Add some padding */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.testimonial:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.testimonial img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #d75157;
+    margin-bottom: 15px;
+    transition: transform 0.3s; /* Smooth scaling effect for image */
+}
+
+.testimonial img:hover {
+    transform: scale(1.1); /* Scale effect on image hover */
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 0 10px;
+}
+
+.testimonial span {
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonial p:last-child {
+    font-style: italic;
+    color: #888;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.navigation button {
+    background-color: #d75157;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for transform */
+}
+
+.navigation button:hover {
+    background-color: #c64047; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .about h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .testimonial {
+        width: 50%; /* Two testimonials per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .about h1 {
+        font-size: 1.5rem; /* Further adjust font size for very small screens */
+    }
+
+    .testimonial {
+        width: 100%; /* One testimonial per row on very small screens */
+    }
+}

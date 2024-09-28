@@ -1,0 +1,218 @@
+/* Floating Animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Prevents borders and padding from affecting the element size */
+}
+
+.Business {
+    position: relative;
+    background-image: url('../../Assets/zero.png'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    width: 100%;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Dark overlay on top of the background */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darken the background */
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+}
+
+/* Text Section */
+.text-container h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.text-container h1 span {
+    color: #d75157; /* The red color for emphasis */
+}
+
+.text-container p {
+    max-width: 400px;
+    margin: 1rem auto 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc; /* Slightly lighter for contrast */
+}
+
+.view-demo-btn {
+    background-color: #d75157;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.view-demo-btn:hover {
+    background-color: #ff695e;
+}
+
+/* Image Section */
+.image-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    z-index: -1;
+}
+
+/* Central Laptop Image */
+.laptop-image {
+    width: 40%;
+    margin-top: 20%;
+    z-index: 2;
+    position: relative;
+}
+
+/* Floating images on the left and right */
+.floating-images {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+}
+
+.floating-images.left {
+    left: -10%;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.floating-images.right {
+    right: -10%;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.small-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite; /* Apply floating animation */
+}
+
+.small-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .laptop-image {
+        width: 50%;
+    }
+
+    .small-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .floating-images.left,
+    .floating-images.right {
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-container h1 {
+        font-size: 2rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+        max-width: 300px;
+    }
+
+    .laptop-image {
+        width: 60%;
+    }
+
+    .floating-images.left,
+    .floating-images.right {
+        position: static;
+        transform: none;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+
+    .small-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .text-container p {
+        font-size: 0.9rem;
+    }
+
+    .view-demo-btn {
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .laptop-image {
+        width: 80%;
+    }
+
+    .small-img {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,137 @@
+.plugins {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.plugins p {
+  font-size: 20px; /* Subtle introduction text */
+  color: #888; /* Slight gray color */
+  margin: 0;
+}
+
+.plugins h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: -20px;
+  font-weight: bolder;
+}
+
+.plugins h1 span {
+  color: #d75157; /* Highlight color */
+}
+
+.carts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Reduced gap for tighter layout */
+  padding: 10px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative; /* Needed for absolute positioning of the arrow */
+  cursor: pointer;
+  gap: 20px;
+  padding: 20px; /* Increased padding for more space */
+  margin-top: 30px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc; /* Subtle border */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  border-radius: 70px 0px 70px 0px; /* Top left and bottom right */
+  transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transitions */
+  overflow: hidden; /* To hide the arrow initially */
+}
+
+/* Arrow on Hover */
+.cart::after {
+  content: '';
+  position: absolute;
+  top: 10px; /* Adjust according to your design */
+  right: 10px; /* Adjust according to your design */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent; /* Adjust arrow size and position */
+  border-left: 10px solid #fff; /* Arrow color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth arrow transition */
+}
+
+/* Card Hover Effect */
+.cart:hover {
+  background-color: #d75157; /* Background changes to highlight color */
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Show Arrow on Hover */
+.cart:hover::after {
+  opacity: 1;
+  transform: translate(-5px, 5px); /* Adjust arrow movement on hover */
+}
+
+/* Reverse Text Color on Hover */
+.cart:hover h4, .cart:hover p {
+  color: #fff; /* Text changes to white on hover */
+}
+
+/* Fade-in Paragraph on Hover */
+.para p {
+  opacity: 1; /* Initially hidden */
+  transform: translateY(10px); /* Start below */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth fade-in transition */
+}
+
+/* Show Paragraph on Hover */
+.cart:hover .para p {
+  opacity: 1;
+  transform: translateY(0); /* Move to original position */
+}
+
+.cart img {
+  width: 60px; /* Adjust image size */
+  height: 60px;
+  border-radius: 50%; /* Rounded image */
+  background-color: #f0f0f0; /* Light background for image */
+  padding: 5px; /* Space around image */
+}
+
+.para {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.para h4 {
+  font-size: 20px;
+  margin: 0;
+  color: #d75157; /* Highlight color */
+  transition: color 0.4s ease; /* Smooth text color transition */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plugins h1 {
+    font-size: 30px; /* Adjusted for smaller screens */
+  }
+
+  .carts {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 30px; /* Adjusted gap for vertical alignment */
+  }
+
+  .cart {
+    width: 90%; /* Full width for smaller screens */
+  }
+}

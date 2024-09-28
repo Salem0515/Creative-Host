@@ -1,0 +1,100 @@
+.home {
+    margin-top: 30px;
+    background-color: #000; /* Keep the dark theme */
+    margin: auto;
+    padding: 50px 0; /* Add padding for better spacing */
+    text-align: center; /* Center all content */
+    position: relative; /* For potential future use */
+}
+
+.number {
+    color: #D75157; /* Highlight color */
+    font-size: 100px;
+    margin-bottom: -80px; /* Adjust for better alignment */
+    font-weight: bolder;
+    z-index: 1; /* Ensure it stays above other elements */
+    position: relative; /* For z-index positioning */
+    transition: transform 0.4s ease; /* Smooth hover effect */
+}
+
+.text {
+    color: #fff;
+    font-size: 60px; /* Adjusted size for a more balanced look */
+    margin-bottom: 50px;
+    font-weight: bolder;
+    transition: transform 0.4s ease; /* Smooth hover effect */
+}
+
+.number:hover, .text:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.pics {
+    display: flex;
+    flex-wrap: wrap; /* Adjusts layout on smaller screens */
+    gap: 30px; /* Increased gap for better separation */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding for spacing */
+    width: 90%; /* Restrict width for better alignment */
+    margin: auto;
+}
+
+.home_1, .home_2, .home_3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #1e1e1e; /* Dark background for cards */
+    padding: 20px; /* Add padding inside each card */
+    border-radius: 15px; /* Smooth corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth transitions */
+    
+}
+
+.home_1:hover, .home_2:hover, .home_3:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+.home_1 h2, .home_2 h2, .home_3 h2 {
+    font-size: 30px; /* Adjusted size for consistency */
+    color: #D75157; /* Highlight color for heading */
+    font-weight: bold;
+    text-align: center; /* Center text */
+    margin-bottom: 10px;
+}
+
+.home_1 img, .home_2 img, .home_3 img {
+    width: 300px; /* Smaller image size for better fit */
+    height: 300px;
+    border-radius: 15px; /* Smooth corners */
+    transition: transform 0.4s ease; /* Smooth hover effect */
+        object-fit: cover; /* Maintain aspect ratio */
+
+}
+
+.home_1 img:hover, .home_2 img:hover, .home_3 img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .number {
+        font-size: 60px; /* Smaller font size */
+    }
+
+    .text {
+        font-size: 40px; /* Smaller font size */
+    }
+
+    .pics {
+        flex-direction: column; /* Stack images vertically */
+    }
+
+    .home_1 img, .home_2 img, .home_3 img {
+        width: 100%; /* Full width for images */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
